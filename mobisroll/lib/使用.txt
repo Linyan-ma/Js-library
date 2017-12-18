@@ -1,0 +1,14 @@
+	$('#startTime').scroller().scroller({
+								preset: 'date',
+								dateFormat: 'yyyy-mm-dd', // 日期格式
+								minDate: new Date(2004, 1, 1, 0, 0),
+								maxDate: new Date(),
+								theme: 'android-ics light',
+								mode: 'scroller',
+								lang: 'zh',
+								dateOrder: 'yymmdd',
+								headerText: function (valueText) { //自定义弹出框头部格式  
+									array = valueText.split('-');
+									return array[0] + "年" + array[1] + "月"+array[2]+"日";
+								}
+							});

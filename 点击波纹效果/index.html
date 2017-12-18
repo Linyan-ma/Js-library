@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="zh">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>css3 animation动画制作点击波特效 - A5源码</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<!-- <link rel="stylesheet" type="text/css" href="css/zzsc-demo.css"> -->
+	<link rel="stylesheet" href="jquery.rippleria.css">
+	<div class="text-center">
+		<a style="display: inline-block;" id="rippleria" href="#">
+	<img src="http://www.lovethispic.com/uploaded_images/15163-Pretty-Girl.jpg" alt="image">
+	</a>
+	</div>
+	<script src="jquery-2.1.1.min.js"></script>
+	<script src="jquery.rippleria.js"></script> 
+	<script>
+		function randInt(min, max) {
+			var rand = min + Math.random() * (max - min)
+			rand = Math.round(rand);
+			return rand;
+		}
+
+		$('#rippleria').rippleria({
+			// aniamtion speed
+			duration: 750,
+			// custom easing effect
+			easing: 'linear',
+			// custom color
+			color: undefined
+		});
+
+		$('#rippleria').click(function (e) {
+			e.preventDefault();
+			$(this).rippleria('changeColor',
+				'rgba(' + randInt(0, 255) + ',' + randInt(0, 255) + ',' + randInt(0, 255) + ',0.' + randInt(3, 5));
+		});
+	</script>
+	</body>
+
+</html>
